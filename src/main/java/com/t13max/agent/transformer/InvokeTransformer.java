@@ -12,12 +12,12 @@ import java.lang.instrument.ClassFileTransformer;
 import java.security.ProtectionDomain;
 
 /**
- * 通用Transformer
+ * 方法调用替换Transformer
  *
  * @author t13max
  * @since 18:17 2025/7/23
  */
-public class CommonTransformer implements ClassFileTransformer {
+public class InvokeTransformer implements ClassFileTransformer {
 
     private final String className;
 
@@ -27,7 +27,7 @@ public class CommonTransformer implements ClassFileTransformer {
 
     private final String replace;
 
-    public CommonTransformer(String className, String methodName, IMethodCallMatcher methodCallMatcher, String replace) {
+    public InvokeTransformer(String className, String methodName, IMethodCallMatcher methodCallMatcher, String replace) {
         this.className = className;
         this.methodName = methodName;
         this.methodCallMatcher = methodCallMatcher;

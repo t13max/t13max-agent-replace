@@ -2,6 +2,7 @@ entries:
   - className: "lib.grpcstartersbram.SessionImplWrapper$SessionImplMixed"
     methodName: "newSessionUserFactoryFromHeaders"
     replace: ""
+    transformer: "InvokeTransformer"
     matcher:
       name: "LineNumberMatcher"
       args:
@@ -9,6 +10,7 @@ entries:
   - className: "lib.grpcstartersbram.SessionImplWrapper"
     methodName: "checkSessionAndWrapperXsHeader"
     replace: ""
+    transformer: "InvokeTransformer"
     matcher:
       name: "LineNumberMatcher"
       args:
@@ -16,6 +18,7 @@ entries:
   - className: "lib.grpcstartersbram.SessionImplWrapper"
     methodName: "checkSessionAndWrapperXsHeader"
     replace: "{ $_ = $proceed($1, new lib.grpcstartersbram.SessionImplWrapper.SessionImplMixed(trapEnv, implSession, scope, s, enabledXxHeaderToken, true, true) ); }"
+    transformer: "InvokeTransformer"
     matcher:
       name: "LineNumberMatcher"
       args:
@@ -23,6 +26,7 @@ entries:
   - className: "room.feature.texas.logic.TexasRoomContext"
     methodName: "checkUserOp"
     replace: "{ $_ = java.time.Duration.ofMillis(1L); }"
+    transformer: "InvokeTransformer"
     matcher:
       name: "ClassMethodMatcher"
       args:

@@ -15,6 +15,8 @@ public class TransformerEntry {
 
     private String replace;
 
+    private String transformer;
+
     public TransformerEntry() {
         // 给 YAML 用的无参构造
     }
@@ -39,6 +41,11 @@ public class TransformerEntry {
         this.replace = replace;
     }
 
+    public void setTransformer(String transformer) {
+        if (this.transformer != null) throw new IllegalStateException("transformer 已设置");
+        this.transformer = transformer;
+    }
+
     public String getClassName() {
         return className;
     }
@@ -53,5 +60,9 @@ public class TransformerEntry {
 
     public String getReplace() {
         return replace;
+    }
+
+    public String getTransformer() {
+        return transformer;
     }
 }
